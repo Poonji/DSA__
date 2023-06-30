@@ -20,6 +20,19 @@ int main()
     cout<<"size of pointer is"<<sizeof(p2)<<endl;
     cout<<"size of float is"<<sizeof(d)<<endl;
 
+int n=5;
+int a=n;
+a++;
+int *p=&n;
+(*p)++;
+
+//copying the pointer
+int *q=p;
+cout<<p<<"--" <<q <<endl;
+cout<<*p<<"--" <<*q <<endl;
+
+
+
 
 
     return  0;

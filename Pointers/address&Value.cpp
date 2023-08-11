@@ -25,6 +25,12 @@ int a=n;
 a++;
 int *p=&n;
 (*p)++;
+int arr[10]={2,5,6,3};
+cout<<"1st"<<*arr<<endl;
+cout<<"2nd"<<*arr+1<<endl;
+cout<<"1st"<<*(arr+1)<<endl;
+cout<<"1st"<<*(arr)+1<<endl;
+
 
 //copying the pointer
 int *q=p;

@@ -10,6 +10,7 @@ int main()
     {
         arr[i]=new int[n];
     }
+    // input
      for(int i=0;i<n;i++)
      {
          for(int j=0;j<n;j++)
@@ -17,6 +18,7 @@ int main()
             cin>>arr[i][j];
          }
      }
+     //output
      for(int i=0;i<n;i++)
      {
          for(int j=0;j<n;j++)
@@ -24,7 +26,10 @@ int main()
             cout<<arr[i][j];
          }
      }
-    
-
+     // releasing the memory
+      for(int i=0;i<n;i++){
+      delete [] arr[i];
+}
+delete []arr;
     return 0;
 }

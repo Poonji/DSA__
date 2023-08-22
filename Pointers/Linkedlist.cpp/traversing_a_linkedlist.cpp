@@ -4,7 +4,7 @@ using namespace std;
 struct Node
 {
     int data;
-    struct Node *next;
+    struct Node *next; //self refrencing structure
 };
  
 void linkedListTraversal(struct Node *ptr)
@@ -14,7 +14,7 @@ void linkedListTraversal(struct Node *ptr)
         cout<<"element:"<<ptr->data;
         ptr = ptr->next;
         cout<<endl;
-    }
+     }
 }
  
 int main()

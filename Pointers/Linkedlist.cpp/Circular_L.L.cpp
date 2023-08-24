@@ -4,26 +4,15 @@ using namespace std;
 struct Node
 {
     int data;
-    struct Node *next;
+    struct Node *next; //self refrencing structure
 };
  
-void linkedListTraversal(struct Node *ptr)
-{
-    while (ptr != NULL)
-    {
-        cout<<"element:"<<ptr->data;
+void linkedListTraversal(struct Node *head){
+    struct Node *ptr = head;
+    do{
+        printf("Element is %d\n", ptr->data);
         ptr = ptr->next;
-        cout<<endl;
-    }
-}
-
-struct Node* insertAtFirst(struct Node*head,int data)  
-{
-    struct Node*ptr=(struct Node*)malloc(sizeof(struct Node));
-    ptr->next=head;
-    ptr->data=data;
-    return ptr;
-
+    }while(ptr!=head);
 }
  
 int main()
@@ -55,8 +44,6 @@ int main()
     fourth->data = 66;
     fourth->next = NULL;
  
-    linkedListTraversal(head);
-    head=insertAtFirst(head,56);
     linkedListTraversal(head);
     return 0;
 }

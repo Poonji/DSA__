@@ -4,28 +4,31 @@ using namespace std;
 struct Node
 {
     int data;
-    struct Node *next;
+    struct Node *next; //self refrencing structure
 };
  
-void linkedListTraversal(struct Node *ptr)
-{
-    while (ptr != NULL)
-    {
-        cout<<"element:"<<ptr->data;
+void linkedListTraversal(struct Node *head){
+    struct Node *ptr = head;
+    do{
+        cout<<"element is:"<<ptr->data<<endl;
         ptr = ptr->next;
-        cout<<endl;
+    }while(ptr!=head);
+}
+ struct Node* insertAtFirst(struct Node*head,int data){
+ struct Node * ptr = (struct Node *) malloc(sizeof(struct Node));
+    ptr->data = data;
+    struct Node * p = head->next;
+    while(p->next!= head){
+        p = p->next;
     }
-}
-
-struct Node* insertAtFirst(struct Node*head,int data)  
-{
-    struct Node*ptr=(struct Node*)malloc(sizeof(struct Node));
-    ptr->next=head;
-    ptr->data=data;
-    return ptr;
-
-}
+     p->next = ptr;
+    ptr->next = head;
+    head = ptr;
+    return head;
  
+}
+
+
 int main()
 {
     struct Node *head;
@@ -53,10 +56,12 @@ int main()
  
     // Terminate the list at the third node
     fourth->data = 66;
-    fourth->next = NULL;
- 
+    fourth->next = head;
+    
+    cout<<"linkedlist before insertion\n";
     linkedListTraversal(head);
-    head=insertAtFirst(head,56);
+    head=insertAtFirst(head,80);
+    cout<<"linkedlist after insertion\n";
     linkedListTraversal(head);
     return 0;
 }

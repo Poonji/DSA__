@@ -17,11 +17,11 @@ void linkedListTraversal(struct Node *ptr)
     }
 }
 
-struct Node* insertAtEnd(struct Node*head,int data,int index)
+struct Node* insertAtEnd(struct Node*head,int data)
 {
     struct Node*ptr=(struct Node*)malloc(sizeof(struct Node));//creating a node name ptr
-    struct Node*p=head;
-    int i=0;
+   ptr->data=data;
+    struct Node * p = head;
     while(p->next!=NULL)
     {
         p=p->next;
@@ -62,7 +62,7 @@ int main()
     fourth->next = NULL;
  
     linkedListTraversal(head);
-    head=insertAtEnd(head,56,1); 
+    head=insertAtEnd(head,1); 
     linkedListTraversal(head);
     return 0;
 }
